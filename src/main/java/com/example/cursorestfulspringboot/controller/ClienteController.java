@@ -13,6 +13,6 @@ public class ClienteController {
     }
     @GetMapping("/cliente/{codigo}") //Mapear
     public String getClientes(@PathVariable int codigo){
-        return "((Versao 2)Vai retornar um dia o cliente de codigo " + codigo ;
+        return "Vai retornar um dia o cliente de codigo " + codigo ;
     }
 }
