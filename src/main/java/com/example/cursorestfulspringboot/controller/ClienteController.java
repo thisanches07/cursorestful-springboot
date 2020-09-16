@@ -44,9 +44,26 @@ public class ClienteController {
         
         return clientes;
     }
-    @GetMapping("/clientes/{codigo}") //Mapear
-    public String getClientes(@PathVariable int codigo){
-        
-        return "Ira retornar um dia o cliente de codigo " + codigo ;
+    @GetMapping("/clientes/{id}") //Mapear
+    public Cliente getCliente(@PathVariable int id){
+        Cliente cliente = null;
+
+        //clientes.size() pega o tamanho do vetor de clientes
+        /*for(int i=0; i < clientes.size();i++)
+        {
+            Clientes aux = clientes.get(i);
+        }*/
+        //ou
+        for(Cliente aux : clientes) //pega do primeiro ao ultimo cliente
+        {
+                if(aux.id == id)
+                {
+                    cliente = aux;
+                    break;
+                }
+                
+
+        }
+        return cliente;
     }
 }
